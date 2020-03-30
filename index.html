@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+	<title>Dunman High Feedback Portal</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+	<h1>DUNMAN HIGH FEEDBACK PORTAL</h1>
+	<h2>Welcome!</h2>
+  <br /><br /><br /><br /><br /><br />
+  <div class="datentime">
+    Today's date: 
+    {{ now.day }}-{{ now.month }}-{{ now.year }}
+    <p>Let us know what we can improve on</p>
+  </div>
+  <br /><br />
+  <div class="mainthing">
+    <br /><br /><br /><br />
+    <form action="/" id="usrform" method="POST">
+    <button type="button" class="collapsible" form="usrform">Which area can we improve on?</button>
+      <div class="content">
+      <p>
+        <label for="environment">
+          <input type="radio" id="environment" name="fbacktype" value="environment" required />School Environment
+        </label>
+        <br /><br />
+        <label for="welfare">
+          <input type="radio" id="welfare" name="fbacktype" value="welfare" required />Student Welfare
+        </label>
+        <br /><br />
+        <label for="other">
+          <input type="radio" id="other" name="fbacktype" value="others" required />Others
+        </label>
+      </p>
+      </div>
+      <br />
+      <label for="class"> Choose your class: </label>
+      <select name="class" id="class" form="usrform">
+        <option value="5C11">5C11</option>
+        <option value="5C12">5C12</option>
+        <option value="5C21">5C21</option>
+        <option value="5C22">5C22</option>
+        <option value="5C31">5C31</option>
+        <option value="5C32">5C32</option>
+        <option value="5C33">5C33</option>
+        <option value="5C34">5C34</option>
+        <option value="5C35">5C35</option>
+        <option value="5C36">5C36</option>
+        <option value="5C37">5C37</option>
+        <option value="5C41">5C41</option>
+        <option value="5C42">5C42</option>
+        <option value="5C43">5C43</option>
+        <option value="5C44">5C44</option>
+        <option value="5C45">5C45</option>
+        <option value="5C46">5C46</option>
+        <option value="5C47">5C47</option>
+        <option value="5C48">5C48</option>
+      </select>
+
+      <br /><br />
+
+      <label for="name">Enter name: </label>
+      <input type="text" id="name" name="name" required />
+    <br /><br />
+      <label for="email">Enter email: </label>
+      <input type="email" id="email" name="email" required />
+      <br /><br />
+    <textarea class="txta" rows="4" cols="50" name="suggestion" form="usrform" placeholder="Enter your suggestion"></textarea>
+
+    <br /><br /><br /><br />
+    <input type="Submit" value="Submit" />
+    </form>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
+  
+  <script>
+    var textarea = document.querySelector('textarea');
+
+    textarea.addEventListener('keydown', autosize);
+                
+    function autosize(){
+      var el = this;
+      setTimeout(function(){
+        el.style.cssText = 'height:auto; padding:0';
+        el.style.cssText = 'height:' + el.scrollHeight + 'px';
+      },0);
+    }
+  </script>
+
+	</body>
+</html>
