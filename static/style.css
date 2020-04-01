@@ -112,13 +112,14 @@
       background-color: #efedce;
       padding: 20px;
       font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-      box-shadow: 5px 10px;
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(86,111,130,1);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(86,111,130,1);
+      box-shadow: 10px 10px 5px 0px rgba(86,111,130,1);
 
     }
 
     textarea {
       outline: none;
-      resize: none;
       overflow: hidden;
       width: 60%;
       padding: 12px 20px;
@@ -129,9 +130,7 @@
       font-family: Futura, "Trebuchet MS", Arial, sans-serif;
       font-size: 16px;
       line-height: 1.4;
-      -webkit-box-shadow: 10px 20px 20px 10px rgba(0,0,0,0.75);
-      -moz-box-shadow: 10px 20px 20px 10px rgba(0,0,0,0.75);
-      box-shadow: 10px 20px 20px 10px rgba(0,0,0,0.75);
+      resize: none;
 
     }
 
@@ -162,3 +161,11 @@
 
     }
 
+    .content {
+      border-radius: 5px;
+      border: 2px solid rgb(0, 0, 0);
+      background-color: #efedce;
+      padding: 10px;
+      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+
+    }
