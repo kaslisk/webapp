@@ -4,22 +4,116 @@
 
 <head>
 	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dunman High Feedback Portal</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <!--<link rel="stylesheet" href="/static/style.css">-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+	<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/js/mdb.min.js"></script>
 </head>
 
 <body>
-	<h1>DUNMAN HIGH FEEDBACK PORTAL</h1>
-	<h2>Welcome!</h2>
-  <br /><br /><br /><br /><br /><br />
-  <div class="datentime">
-    Today's date: 
-    {{ now.day }}-{{ now.month }}-{{ now.year }}
-    <p>Let us know what we can improve on</p>
-  </div>
+	<div class="jumbotron card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg); padding: 3.5%;">
+		<div class="text-white text-center py-0 px-0">
+			<h2 class="card-title h1-responsive pt-0 mb-0 font-bold"><strong>DUNMAN HIGH FEEDBACK PORTAL &#129488;</strong></h2>
+			<h2>Welcome!</h2>
+	  	<div class="datentime">
+		    Today's date:
+		    {{ now.day }}-{{ now.month }}-{{ now.year }}
+		    <p>Let us know what we can improve on</p>
+		  </div>
+		</div>
+	</div>
   <br /><br />
-  <div class="mainthing">
+<div class="container" style="padding: 0% 5%;">
+	<form action="/" method="POST">
+		<div class="form-group col-xs-4">
+			<label for="name">Name? &#128526;</label>
+			<input type="text" class="form-control" id="name" aria-describedby="nameCaution" placeholder="Eg: Samuel Huang Qiu Di..." name="name">
+			<small id="nameCaution" class="form-text text-muted">We'll never share your name with anyone else.</small>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputEmail1">Email address? &#128537;</label>
+			<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Eg: huang.qiudi@dhs.sg..." name="email">
+			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		</div>
+		<div class="form-group">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="inputGroupSelect01">Choose your class:</label>
+				</div>
+				<select class="custom-select" id="inputGroupSelect01" name="class">
+					<option selected>Choose...</option>
+					<option value="5C11">5C11</option>
+					<option value="5C12">5C12</option>
+					<option value="5C21">5C21</option>
+					<option value="5C22">5C22</option>
+					<option value="5C31">5C31</option>
+					<option value="5C32">5C32</option>
+					<option value="5C33">5C33</option>
+					<option value="5C34">5C34</option>
+					<option value="5C35">5C35</option>
+					<option value="5C36">5C36</option>
+					<option value="5C37">5C37</option>
+					<option value="5C41">5C41</option>
+					<option value="5C42">5C42</option>
+					<option value="5C43">5C43</option>
+					<option value="5C44">5C44</option>
+					<option value="5C45">5C45</option>
+					<option value="5C46">5C46</option>
+					<option value="5C47">5C47</option>
+					<option value="5C48">5C48</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<label class="input-group-text" for="inputGroupSelect01">Choose your feedback type:</label>
+			</div>
+			<select class="custom-select" id="inputGroupSelect01" name="fbacktype">
+				<option selected>Choose...</option>
+				<option value="environment">School Environment</option>
+				<option value="welfare">Student Welfare</option>
+				<option value="others">Others</option>
+			</select>
+		</div>
+		<div class="md-form">
+		  <i class="fas fa-pencil-alt prefix"></i>
+		  <textarea id="form10" class="md-textarea form-control" rows="3" name="suggestion"></textarea>
+			<label for="form10">Suggestions?</label>
+		</div>
+		<div class="text-center">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+</div>
+  <script type="text/javascript" src="/static/autosize.js"></script>
+
+  <script type="text/javascript" src="/static/collapsible.js"></script>
+
+	</body>
+</html>
+
+
+  <!--<div class="mainthing">
     <br /><br /><br /><br />
     <form action="/" method="POST">
     <button type="button" class="collapsible">Which area can we improve on?</button>
@@ -75,11 +169,4 @@
     <br /><br /><br /><br />
     <input type="Submit" value="Submit" />
     </form>
-  </div>
-
-  <script type="text/javascript" src="/scripts/autosize.js"></script>
-  
-  <script type="text/javascript" src="/scripts/collapsible.js"></script>
-
-	</body>
-</html>
+  </div> -->
