@@ -41,7 +41,7 @@
     }
 
     body{
-      background:	rgb(132, 168, 196);       
+      background:	rgb(132, 168, 196);
       text-align: center;
       font-family: Futura, "Trebuchet MS", Arial, sans-serif;
       color: rgb(132, 168, 196);
@@ -84,7 +84,7 @@
       left: 40%;
       transform: translate(-50%, -50%);
       width: 180px;
-      height: 50px;
+      height: auto;
       line-height: 1;
       font-size: 18px;
       font-weight: bold;
@@ -96,7 +96,7 @@
       cursor: pointer;
       overflow: hidden;
       transition: all .35s;
-      
+
     }
 
     button:hover{
